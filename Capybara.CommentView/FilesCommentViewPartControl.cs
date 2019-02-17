@@ -15,7 +15,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace Capybara.CommentView
 {
-    public partial class CommentViewPartControl : UserControl
+    public partial class FilesCommentViewPartControl : UserControl
     {
         private string _initialDirectory;
 
@@ -23,7 +23,7 @@ namespace Capybara.CommentView
 
         private static readonly XSSFFont InlineCommentFont = new XSSFFont();
         private SortableBindingList<CommentEntry> _commentEntries = new SortableBindingList<CommentEntry>();
-        private SortableBindingList<FileEntry> _fileEntries = new SortableBindingList<FileEntry>();
+        private SortableBindingList<ProjectFileEntry> _fileEntries = new SortableBindingList<ProjectFileEntry>();
 
         private static readonly Dictionary<string, Color> BackColors = new Dictionary<string, Color>
         {
@@ -88,19 +88,81 @@ namespace Capybara.CommentView
             }
         };
 
-        public CommentViewPartControl()
+        public FilesCommentViewPartControl()
         {
             InitializeComponent();
             _initialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            InlineRegularFont.FontName = "Arial Unicode MS";
+            InlineRegularFont.FontName = "Segoe UI";
             InlineCommentFont.IsBold = true;
-            InlineCommentFont.FontName = "Arial Unicode MS";
+            InlineCommentFont.FontName = "Segoe UI";
             InlineCommentFont.SetColor(new XSSFColor(Color.Blue));
             sourceRTB.LanguageOption = RichTextBoxLanguageOptions.UIFonts;
             targetRTB.LanguageOption = RichTextBoxLanguageOptions.UIFonts;
             commentEntryBindingSource.DataSource = _commentEntries;
             fileEntryBindingSource.DataSource = _fileEntries;
-            GetFilesController().SelectedFilesChanged += CommentViewPartControl_SelectedFilesChanged;
+            loadingProgressBar.Visible = false;
+            //GetFilesController().SelectedFilesChanged += CommentViewPartControl_SelectedFilesChanged;
+        }
+
+        public void ShowLoadingProgressBar(bool visible)
+        {
+            loadingProgressBar.Visible = visible;
+            if (visible)
+            {
+                loadingProgressBar.Style = ProgressBarStyle.Marquee;
+                loadingProgressBar.MarqueeAnimationSpeed = 50;
+            }
+            else
+            {
+                loadingProgressBar.Style = ProgressBarStyle.Blocks;
+            }
+        }
+
+        public void SetContent(IEnumerable<ProjectFileEntry> entries)
+        {
+            entries = entries.ToList();
+            var commentIndices =
+                commentsDGV.SelectedRows.OfType<DataGridViewRow>()
+                    .Select(row => row.Index)
+                    .Where(i => i >= 0)
+                    .ToList();
+            var fileIndices =
+                filesDGV.SelectedRows.OfType<DataGridViewRow>().Select(row => row.Index).Where(i => i >= 0)
+                    .ToList();
+
+            sourceRTB.Clear();
+            targetRTB.Clear();
+            _commentEntries.Clear();
+            _fileEntries.Clear();
+            
+            _commentEntries.AddRange(entries.SelectMany(x => x.Comments));
+            _fileEntries.AddRange(entries);
+
+            if (commentIndices.Count > 0)
+            {
+                commentsDGV.ClearSelection();
+                foreach (var index in commentIndices)
+                {
+                    if (commentsDGV.Rows.Count > index)
+                    {
+                        commentsDGV.Rows[index].Selected = true;
+                    }
+                }
+            }
+
+            if (fileIndices.Count > 0)
+            {
+                filesDGV.ClearSelection();
+            }
+
+            foreach (var index in fileIndices)
+            {
+                if (filesDGV.Rows.Count > index)
+                {
+                    filesDGV.Rows[index].Selected = true;
+                }
+            }
+
         }
 
         private void CommentViewPartControl_SelectedFilesChanged(object sender, EventArgs e)
@@ -116,17 +178,12 @@ namespace Capybara.CommentView
                                 f.Role == FileRole.Translatable &&
                                 f.LocalFilePath.EndsWith(".sdlxliff", StringComparison.OrdinalIgnoreCase));
                 var commentEntries = new List<CommentEntry>();
-                var fileEntries = new List<FileEntry>();
+                var fileEntries = new List<ProjectFileEntry>();
                 foreach (var file in selectedFiles)
                 {
                     var comments = CommentExtractor.Extract(file);
                     commentEntries.AddRange(comments);
-                    fileEntries.Add(new FileEntry
-                    {
-                        ProjectFile = file,
-                        FileName = file.Folder + file.Name,
-                        Comments = comments.Count
-                    });
+                    fileEntries.Add(new ProjectFileEntry(file, comments));
                 }
 
                 return new {comments = commentEntries, files = fileEntries};
@@ -300,7 +357,7 @@ namespace Capybara.CommentView
                 return;
             }
 
-            var row = dgv.Rows[e.RowIndex].DataBoundItem as FileEntry;
+            var row = dgv.Rows[e.RowIndex].DataBoundItem as ProjectFileEntry;
             if (row == null)
             {
                 return;
@@ -328,7 +385,7 @@ namespace Capybara.CommentView
             {
                 var selectedFiles =
                     dgv.SelectedRows.OfType<DataGridViewRow>()
-                        .Select(r => (r.DataBoundItem as FileEntry).ProjectFile)
+                        .Select(r => (r.DataBoundItem as ProjectFileEntry).ProjectFile)
                         .ToList();
 
                 if (selectedFiles.Count == 0)
@@ -439,7 +496,7 @@ namespace Capybara.CommentView
                 where c.Value
                 select c.Key).ToArray<string>();
             CreateRow(filesSheet, num, style, array);
-            foreach (FileEntry current in _fileEntries)
+            foreach (ProjectFileEntry current in _fileEntries)
             {
                 num++;
                 List<string> list = new List<string>();

@@ -11,5 +11,6 @@
     <File>NPOI.OOXML.dll</File>
     <File>NPOI.OpenXml4Net.dll</File>
     <File>NPOI.OpenXmlFormats.dll</File>
+    <File>DataGridViewGrouper.dll</File>
   </Include>
 </PluginPackage>

@@ -1,19 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Xml;
 using System.Xml.Linq;
-using Capybara.CommentView.Models;
 using Sdl.ProjectAutomation.Core;
 
-namespace Capybara.CommentView
+namespace Capybara.CommentView.Models
 {
     public static class CommentExtractor
     {
         private static readonly XNamespace Sdl = @"http://sdl.com/FileTypes/SdlXliff/1.0";
         private static readonly XNamespace Xlf = @"urn:oasis:names:tc:xliff:document:1.2";
 
-        public static IList<CommentEntry> Extract(ProjectFile projectFile)
+        public static List<CommentEntry> Extract(ProjectFile projectFile)
         {
             var commentEntries = new List<CommentEntry>();
             using (var reader = new XmlTextReader(projectFile.LocalFilePath))
@@ -76,11 +74,9 @@ namespace Capybara.CommentView
                                 commentEntry.SourceSegment = BuildSegment(srcMrk, commentEntry.Id);
                                 commentEntry.TargetSegment = BuildSegment(trgMrk, commentEntry.Id);
                                 commentEntry.SourceText =
-                                    commentEntry.SourceSegment.Aggregate(new StringBuilder(),
-                                        (builder, e) => builder.Append(e.Value)).ToString();
-                                commentEntry.TargetText = 
-                                    commentEntry.TargetSegment.Aggregate(new StringBuilder(),
-                                        (builder, e) => builder.Append(e.Value)).ToString();
+                                    string.Join("", commentEntry.SourceSegment.Select(x => x.Value));
+                                commentEntry.TargetText =
+                                    string.Join("", commentEntry.TargetSegment.Select(x => x.Value));
                             }
                         }
                     }

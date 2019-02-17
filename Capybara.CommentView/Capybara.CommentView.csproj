@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,6 +56,10 @@
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.Core.Globalization, Version=1.8.0.0, Culture=neutral, PublicKeyToken=c28cdb26c445c888, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SDL\SDL Trados Studio\Studio15\Sdl.Core.Globalization.dll</HintPath>
     </Reference>
     <Reference Include="Sdl.Core.PluginFramework">
       <HintPath>..\packages\Sdl.Core.PluginFramework.1.8.0\lib\net45\Sdl.Core.PluginFramework.dll</HintPath>
@@ -116,14 +120,23 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommentExtractor.cs" />
-    <Compile Include="CommentViewPartControl.cs">
+    <Compile Include="Models\CommentExtractor.cs" />
+    <Compile Include="Models\CommentService.cs" />
+    <Compile Include="Models\TargetLanguageBasedProjectEntry.cs" />
+    <Compile Include="ProjectsCommentViewPartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CommentViewPartControl.Designer.cs">
-      <DependentUpon>CommentViewPartControl.cs</DependentUpon>
+    <Compile Include="ProjectsCommentViewPartControl.Designer.cs">
+      <DependentUpon>ProjectsCommentViewPartControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CommentViewPartController.cs" />
+    <Compile Include="ProjectsCommentViewPartController.cs" />
+    <Compile Include="FilesCommentViewPartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FilesCommentViewPartControl.Designer.cs">
+      <DependentUpon>FilesCommentViewPartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FilesCommentViewPartController.cs" />
     <Compile Include="ExportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,7 +148,7 @@
     <Compile Include="Models\CommentElement.cs" />
     <Compile Include="Models\CommentEntry.cs" />
     <Compile Include="Models\ExportOptions.cs" />
-    <Compile Include="Models\FileEntry.cs" />
+    <Compile Include="Models\ProjectFileEntry.cs" />
     <Compile Include="Models\ISegmentElement.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\TextElement.cs" />
@@ -148,8 +161,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Docs\2015-01-07_010331.png" />
-    <Content Include="Docs\2015-01-07_010351.png" />
     <Content Include="PluginResources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,9 +172,8 @@
     <Content Include="Resources\Comment-icon.png" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.ExportOptions.datasource" />
+    <None Include="Properties\DataSources\Capybara.CommentView.Models.TargetLanguageBasedProjectEntry.datasource" />
     <None Include="Resources\comment.ico" />
-    <None Include="Signed\2015-01-07_01\Capybara.CommentView.sdlplugin" />
-    <None Include="Signed\2015-01-28_01_v1.1\Capybara.CommentView.sdlplugin" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Capyabara.CommentViewPlugin.snk" />
@@ -171,14 +181,22 @@
     <None Include="Properties\DataSources\Capybara.CommentView.Models.FileEntry.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CommentViewPartControl.resx">
-      <DependentUpon>CommentViewPartControl.cs</DependentUpon>
+    <EmbeddedResource Include="ProjectsCommentViewPartControl.resx">
+      <DependentUpon>ProjectsCommentViewPartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilesCommentViewPartControl.resx">
+      <DependentUpon>FilesCommentViewPartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExportForm.resx">
       <DependentUpon>ExportForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridViewGrouper\DataGridViewGrouper.csproj">
+      <Project>{785a6fbb-2ba0-42be-84c4-1703bcad15d2}</Project>
+      <Name>DataGridViewGrouper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <CreatePluginPackage>true</CreatePluginPackage>
   </PropertyGroup>

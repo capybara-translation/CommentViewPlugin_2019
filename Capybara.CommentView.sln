@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capybara.CommentView", "Capybara.CommentView\Capybara.CommentView.csproj", "{2029B1A6-402F-43A2-AEAE-CD80C4F19677}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Capybara.CommentViewSetup", "Capybara.CommentViewSetup\Capybara.CommentViewSetup.vdproj", "{BD40CC82-6F83-469A-BC84-8B4503CE46B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewGrouper", "DataGridViewGrouper\DataGridViewGrouper.csproj", "{785A6FBB-2BA0-42BE-84C4-1703BCAD15D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,15 @@ Global
 		{2029B1A6-402F-43A2-AEAE-CD80C4F19677}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2029B1A6-402F-43A2-AEAE-CD80C4F19677}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2029B1A6-402F-43A2-AEAE-CD80C4F19677}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD40CC82-6F83-469A-BC84-8B4503CE46B6}.Debug|Any CPU.ActiveCfg = Debug
-		{BD40CC82-6F83-469A-BC84-8B4503CE46B6}.Release|Any CPU.ActiveCfg = Release
+		{785A6FBB-2BA0-42BE-84C4-1703BCAD15D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785A6FBB-2BA0-42BE-84C4-1703BCAD15D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785A6FBB-2BA0-42BE-84C4-1703BCAD15D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785A6FBB-2BA0-42BE-84C4-1703BCAD15D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46FF94AD-C60D-40C4-B1FB-03998F2D2DBA}
 	EndGlobalSection
 EndGlobal

@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Capybara.CommentView.Models
 {
     abstract public class ModelBase : INotifyPropertyChanged, IDataErrorInfo
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             if (PropertyChanged == null) return;
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));

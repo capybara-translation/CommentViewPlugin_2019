@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Capybara.CommentView")]
+[assembly: AssemblyTitle("DataGridViewGrouper")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Capybara.CommentView")]
+[assembly: AssemblyProduct("DataGridViewGrouper")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8e444a80-bb3c-4b1b-b473-dd23ae2b1112")]
+[assembly: Guid("87173f39-2adc-4d32-8362-bc1d273af914")]
 
 // Version information for an assembly consists of the following four values:
 //

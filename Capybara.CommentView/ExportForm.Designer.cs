@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.targetCheckBox = new System.Windows.Forms.CheckBox();
+            this.exportOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sourceCheckBox = new System.Windows.Forms.CheckBox();
             this.versionCheckBox = new System.Windows.Forms.CheckBox();
             this.severityCheckBox = new System.Windows.Forms.CheckBox();
@@ -44,10 +45,9 @@
             this.commentsCheckBox = new System.Windows.Forms.CheckBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
-            this.exportOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -76,10 +76,14 @@
             this.targetCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Target", true));
             this.targetCheckBox.Location = new System.Drawing.Point(236, 69);
             this.targetCheckBox.Name = "targetCheckBox";
-            this.targetCheckBox.Size = new System.Drawing.Size(64, 19);
+            this.targetCheckBox.Size = new System.Drawing.Size(59, 19);
             this.targetCheckBox.TabIndex = 0;
             this.targetCheckBox.Text = "Target";
             this.targetCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // exportOptionsBindingSource
+            // 
+            this.exportOptionsBindingSource.DataSource = typeof(Capybara.CommentView.Models.ExportOptions);
             // 
             // sourceCheckBox
             // 
@@ -87,7 +91,7 @@
             this.sourceCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Source", true));
             this.sourceCheckBox.Location = new System.Drawing.Point(108, 69);
             this.sourceCheckBox.Name = "sourceCheckBox";
-            this.sourceCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.sourceCheckBox.Size = new System.Drawing.Size(62, 19);
             this.sourceCheckBox.TabIndex = 0;
             this.sourceCheckBox.Text = "Source";
             this.sourceCheckBox.UseVisualStyleBackColor = true;
@@ -98,7 +102,7 @@
             this.versionCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Version", true));
             this.versionCheckBox.Location = new System.Drawing.Point(31, 69);
             this.versionCheckBox.Name = "versionCheckBox";
-            this.versionCheckBox.Size = new System.Drawing.Size(68, 19);
+            this.versionCheckBox.Size = new System.Drawing.Size(64, 19);
             this.versionCheckBox.TabIndex = 0;
             this.versionCheckBox.Text = "Version";
             this.versionCheckBox.UseVisualStyleBackColor = true;
@@ -109,7 +113,7 @@
             this.severityCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Severity", true));
             this.severityCheckBox.Location = new System.Drawing.Point(532, 33);
             this.severityCheckBox.Name = "severityCheckBox";
-            this.severityCheckBox.Size = new System.Drawing.Size(75, 19);
+            this.severityCheckBox.Size = new System.Drawing.Size(67, 19);
             this.severityCheckBox.TabIndex = 0;
             this.severityCheckBox.Text = "Severity";
             this.severityCheckBox.UseVisualStyleBackColor = true;
@@ -120,7 +124,7 @@
             this.dateCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Date", true));
             this.dateCheckBox.Location = new System.Drawing.Point(447, 33);
             this.dateCheckBox.Name = "dateCheckBox";
-            this.dateCheckBox.Size = new System.Drawing.Size(54, 19);
+            this.dateCheckBox.Size = new System.Drawing.Size(50, 19);
             this.dateCheckBox.TabIndex = 0;
             this.dateCheckBox.Text = "Date";
             this.dateCheckBox.UseVisualStyleBackColor = true;
@@ -131,7 +135,7 @@
             this.authorCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Author", true));
             this.authorCheckBox.Location = new System.Drawing.Point(351, 33);
             this.authorCheckBox.Name = "authorCheckBox";
-            this.authorCheckBox.Size = new System.Drawing.Size(65, 19);
+            this.authorCheckBox.Size = new System.Drawing.Size(63, 19);
             this.authorCheckBox.TabIndex = 0;
             this.authorCheckBox.Text = "Author";
             this.authorCheckBox.UseVisualStyleBackColor = true;
@@ -142,7 +146,7 @@
             this.commentCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Comment", true));
             this.commentCheckBox.Location = new System.Drawing.Point(236, 33);
             this.commentCheckBox.Name = "commentCheckBox";
-            this.commentCheckBox.Size = new System.Drawing.Size(84, 19);
+            this.commentCheckBox.Size = new System.Drawing.Size(80, 19);
             this.commentCheckBox.TabIndex = 0;
             this.commentCheckBox.Text = "Comment";
             this.commentCheckBox.UseVisualStyleBackColor = true;
@@ -153,7 +157,7 @@
             this.segmentIDCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "SegmentId", true));
             this.segmentIDCheckBox.Location = new System.Drawing.Point(108, 33);
             this.segmentIDCheckBox.Name = "segmentIDCheckBox";
-            this.segmentIDCheckBox.Size = new System.Drawing.Size(97, 19);
+            this.segmentIDCheckBox.Size = new System.Drawing.Size(87, 19);
             this.segmentIDCheckBox.TabIndex = 0;
             this.segmentIDCheckBox.Text = "Segment ID";
             this.segmentIDCheckBox.UseVisualStyleBackColor = true;
@@ -164,7 +168,7 @@
             this.fileCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "File", true));
             this.fileCheckBox.Location = new System.Drawing.Point(31, 33);
             this.fileCheckBox.Name = "fileCheckBox";
-            this.fileCheckBox.Size = new System.Drawing.Size(46, 19);
+            this.fileCheckBox.Size = new System.Drawing.Size(44, 19);
             this.fileCheckBox.TabIndex = 0;
             this.fileCheckBox.Text = "File";
             this.fileCheckBox.UseVisualStyleBackColor = true;
@@ -186,7 +190,7 @@
             this.file2CheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "File2", true));
             this.file2CheckBox.Location = new System.Drawing.Point(159, 31);
             this.file2CheckBox.Name = "file2CheckBox";
-            this.file2CheckBox.Size = new System.Drawing.Size(46, 19);
+            this.file2CheckBox.Size = new System.Drawing.Size(44, 19);
             this.file2CheckBox.TabIndex = 1;
             this.file2CheckBox.Text = "File";
             this.file2CheckBox.UseVisualStyleBackColor = true;
@@ -197,7 +201,7 @@
             this.commentsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.exportOptionsBindingSource, "Comments", true));
             this.commentsCheckBox.Location = new System.Drawing.Point(31, 31);
             this.commentsCheckBox.Name = "commentsCheckBox";
-            this.commentsCheckBox.Size = new System.Drawing.Size(90, 19);
+            this.commentsCheckBox.Size = new System.Drawing.Size(85, 19);
             this.commentsCheckBox.TabIndex = 0;
             this.commentsCheckBox.Text = "Comments";
             this.commentsCheckBox.UseVisualStyleBackColor = true;
@@ -224,10 +228,6 @@
             this.exportButton.Text = "Export";
             this.exportButton.UseVisualStyleBackColor = true;
             // 
-            // exportOptionsBindingSource
-            // 
-            this.exportOptionsBindingSource.DataSource = typeof(Capybara.CommentView.Models.ExportOptions);
-            // 
             // ExportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -237,15 +237,15 @@
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ExportForm";
             this.Text = "ExportForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
