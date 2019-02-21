@@ -30,23 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.commentsDGV = new System.Windows.Forms.DataGridView();
             this.fileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mainTabControl = new System.Windows.Forms.TabControl();
-            this.commentsTab = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.sourceRTB = new System.Windows.Forms.RichTextBox();
-            this.targetRTB = new System.Windows.Forms.RichTextBox();
-            this.filesTab = new System.Windows.Forms.TabPage();
-            this.filesDGV = new System.Windows.Forms.DataGridView();
-            this.CommentsCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rootTable = new System.Windows.Forms.TableLayoutPanel();
-            this.showExportFormButton = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paragraphIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.segmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,10 +47,22 @@
             this.severityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.versionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentEntryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mainTabControl = new System.Windows.Forms.TabControl();
+            this.commentsTab = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.sourceRTB = new System.Windows.Forms.RichTextBox();
+            this.targetRTB = new System.Windows.Forms.RichTextBox();
+            this.filesTab = new System.Windows.Forms.TabPage();
+            this.filesDGV = new System.Windows.Forms.DataGridView();
+            this.CommentsCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileEntryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rootTable = new System.Windows.Forms.TableLayoutPanel();
+            this.showExportFormButton = new System.Windows.Forms.Button();
             this.loadingProgressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.commentsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentEntryBindingSource)).BeginInit();
             this.mainTabControl.SuspendLayout();
             this.commentsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -74,9 +75,8 @@
             this.splitContainer2.SuspendLayout();
             this.filesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.filesDGV)).BeginInit();
-            this.rootTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.commentEntryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileEntryBindingSource)).BeginInit();
+            this.rootTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // commentsDGV
@@ -113,12 +113,12 @@
             this.commentsDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.commentsDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.commentsDGV.Location = new System.Drawing.Point(0, 0);
-            this.commentsDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.commentsDGV.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.commentsDGV.Name = "commentsDGV";
             this.commentsDGV.RowHeadersVisible = false;
             this.commentsDGV.RowTemplate.Height = 21;
             this.commentsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commentsDGV.Size = new System.Drawing.Size(629, 282);
+            this.commentsDGV.Size = new System.Drawing.Size(637, 304);
             this.commentsDGV.TabIndex = 0;
             this.commentsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commentsDGV_CellDoubleClick);
             this.commentsDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.commentsDGV_CellFormatting);
@@ -132,181 +132,6 @@
             this.fileDataGridViewTextBoxColumn.HeaderText = "File";
             this.fileDataGridViewTextBoxColumn.Name = "fileDataGridViewTextBoxColumn";
             this.fileDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // mainTabControl
-            // 
-            this.rootTable.SetColumnSpan(this.mainTabControl, 2);
-            this.mainTabControl.Controls.Add(this.commentsTab);
-            this.mainTabControl.Controls.Add(this.filesTab);
-            this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTabControl.Location = new System.Drawing.Point(3, 4);
-            this.mainTabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.mainTabControl.Name = "mainTabControl";
-            this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(859, 318);
-            this.mainTabControl.TabIndex = 1;
-            // 
-            // commentsTab
-            // 
-            this.commentsTab.Controls.Add(this.splitContainer1);
-            this.commentsTab.Location = new System.Drawing.Point(4, 24);
-            this.commentsTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.commentsTab.Name = "commentsTab";
-            this.commentsTab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.commentsTab.Size = new System.Drawing.Size(851, 290);
-            this.commentsTab.TabIndex = 0;
-            this.commentsTab.Text = "Comments";
-            this.commentsTab.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 4);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.commentsDGV);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(845, 282);
-            this.splitContainer1.SplitterDistance = 629;
-            this.splitContainer1.SplitterWidth = 5;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.sourceRTB);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.targetRTB);
-            this.splitContainer2.Size = new System.Drawing.Size(211, 282);
-            this.splitContainer2.SplitterDistance = 136;
-            this.splitContainer2.SplitterWidth = 5;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // sourceRTB
-            // 
-            this.sourceRTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sourceRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.sourceRTB.Location = new System.Drawing.Point(0, 0);
-            this.sourceRTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sourceRTB.Name = "sourceRTB";
-            this.sourceRTB.ReadOnly = true;
-            this.sourceRTB.Size = new System.Drawing.Size(211, 136);
-            this.sourceRTB.TabIndex = 0;
-            this.sourceRTB.Text = "";
-            // 
-            // targetRTB
-            // 
-            this.targetRTB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.targetRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.targetRTB.Location = new System.Drawing.Point(0, 0);
-            this.targetRTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.targetRTB.Name = "targetRTB";
-            this.targetRTB.ReadOnly = true;
-            this.targetRTB.Size = new System.Drawing.Size(211, 141);
-            this.targetRTB.TabIndex = 0;
-            this.targetRTB.Text = "";
-            // 
-            // filesTab
-            // 
-            this.filesTab.Controls.Add(this.filesDGV);
-            this.filesTab.Location = new System.Drawing.Point(4, 24);
-            this.filesTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.filesTab.Name = "filesTab";
-            this.filesTab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.filesTab.Size = new System.Drawing.Size(851, 290);
-            this.filesTab.TabIndex = 1;
-            this.filesTab.Text = "Files";
-            this.filesTab.UseVisualStyleBackColor = true;
-            // 
-            // filesDGV
-            // 
-            this.filesDGV.AllowUserToAddRows = false;
-            this.filesDGV.AllowUserToDeleteRows = false;
-            this.filesDGV.AllowUserToOrderColumns = true;
-            this.filesDGV.AllowUserToResizeRows = false;
-            this.filesDGV.AutoGenerateColumns = false;
-            this.filesDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.filesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filesDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CommentsCountColumn,
-            this.fileNameColumn});
-            this.filesDGV.DataSource = this.fileEntryBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.filesDGV.DefaultCellStyle = dataGridViewCellStyle5;
-            this.filesDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filesDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.filesDGV.Location = new System.Drawing.Point(3, 4);
-            this.filesDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.filesDGV.Name = "filesDGV";
-            this.filesDGV.RowHeadersVisible = false;
-            this.filesDGV.RowTemplate.Height = 21;
-            this.filesDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.filesDGV.Size = new System.Drawing.Size(845, 282);
-            this.filesDGV.TabIndex = 0;
-            this.filesDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filesDGV_CellDoubleClick);
-            this.filesDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.filesDGV_CellFormatting);
-            this.filesDGV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.filesDGV_KeyDown);
-            // 
-            // CommentsCountColumn
-            // 
-            this.CommentsCountColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.CommentsCountColumn.DataPropertyName = "CommentsCount";
-            this.CommentsCountColumn.HeaderText = "Comments";
-            this.CommentsCountColumn.Name = "CommentsCountColumn";
-            this.CommentsCountColumn.ReadOnly = true;
-            this.CommentsCountColumn.Width = 97;
-            // 
-            // rootTable
-            // 
-            this.rootTable.ColumnCount = 2;
-            this.rootTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.rootTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.rootTable.Controls.Add(this.mainTabControl, 0, 0);
-            this.rootTable.Controls.Add(this.showExportFormButton, 0, 1);
-            this.rootTable.Controls.Add(this.loadingProgressBar, 1, 1);
-            this.rootTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rootTable.Location = new System.Drawing.Point(0, 0);
-            this.rootTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.rootTable.Name = "rootTable";
-            this.rootTable.RowCount = 2;
-            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.rootTable.Size = new System.Drawing.Size(865, 363);
-            this.rootTable.TabIndex = 2;
-            // 
-            // showExportFormButton
-            // 
-            this.showExportFormButton.AutoSize = true;
-            this.showExportFormButton.Location = new System.Drawing.Point(3, 330);
-            this.showExportFormButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.showExportFormButton.Name = "showExportFormButton";
-            this.showExportFormButton.Size = new System.Drawing.Size(131, 29);
-            this.showExportFormButton.TabIndex = 2;
-            this.showExportFormButton.Text = "Export Comments...";
-            this.showExportFormButton.UseVisualStyleBackColor = true;
-            this.showExportFormButton.Click += new System.EventHandler(this.showExportFormButton_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -397,6 +222,149 @@
             // 
             this.commentEntryBindingSource.DataSource = typeof(Capybara.CommentView.Models.CommentEntry);
             // 
+            // mainTabControl
+            // 
+            this.rootTable.SetColumnSpan(this.mainTabControl, 2);
+            this.mainTabControl.Controls.Add(this.commentsTab);
+            this.mainTabControl.Controls.Add(this.filesTab);
+            this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTabControl.Location = new System.Drawing.Point(0, 0);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(0);
+            this.mainTabControl.Name = "mainTabControl";
+            this.mainTabControl.SelectedIndex = 0;
+            this.mainTabControl.Size = new System.Drawing.Size(865, 332);
+            this.mainTabControl.TabIndex = 1;
+            // 
+            // commentsTab
+            // 
+            this.commentsTab.Controls.Add(this.splitContainer1);
+            this.commentsTab.Location = new System.Drawing.Point(4, 24);
+            this.commentsTab.Margin = new System.Windows.Forms.Padding(0);
+            this.commentsTab.Name = "commentsTab";
+            this.commentsTab.Size = new System.Drawing.Size(857, 304);
+            this.commentsTab.TabIndex = 0;
+            this.commentsTab.Text = "Comments";
+            this.commentsTab.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.commentsDGV);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(857, 304);
+            this.splitContainer1.SplitterDistance = 637;
+            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.TabIndex = 1;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.sourceRTB);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.targetRTB);
+            this.splitContainer2.Size = new System.Drawing.Size(215, 304);
+            this.splitContainer2.SplitterDistance = 145;
+            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // sourceRTB
+            // 
+            this.sourceRTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sourceRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.sourceRTB.Location = new System.Drawing.Point(0, 0);
+            this.sourceRTB.Margin = new System.Windows.Forms.Padding(3, 0, 3, 4);
+            this.sourceRTB.Name = "sourceRTB";
+            this.sourceRTB.ReadOnly = true;
+            this.sourceRTB.Size = new System.Drawing.Size(215, 145);
+            this.sourceRTB.TabIndex = 0;
+            this.sourceRTB.Text = "";
+            // 
+            // targetRTB
+            // 
+            this.targetRTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.targetRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.targetRTB.Location = new System.Drawing.Point(0, 0);
+            this.targetRTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.targetRTB.Name = "targetRTB";
+            this.targetRTB.ReadOnly = true;
+            this.targetRTB.Size = new System.Drawing.Size(215, 154);
+            this.targetRTB.TabIndex = 0;
+            this.targetRTB.Text = "";
+            // 
+            // filesTab
+            // 
+            this.filesTab.Controls.Add(this.filesDGV);
+            this.filesTab.Location = new System.Drawing.Point(4, 24);
+            this.filesTab.Margin = new System.Windows.Forms.Padding(0);
+            this.filesTab.Name = "filesTab";
+            this.filesTab.Size = new System.Drawing.Size(857, 304);
+            this.filesTab.TabIndex = 1;
+            this.filesTab.Text = "Files";
+            this.filesTab.UseVisualStyleBackColor = true;
+            // 
+            // filesDGV
+            // 
+            this.filesDGV.AllowUserToAddRows = false;
+            this.filesDGV.AllowUserToDeleteRows = false;
+            this.filesDGV.AllowUserToOrderColumns = true;
+            this.filesDGV.AllowUserToResizeRows = false;
+            this.filesDGV.AutoGenerateColumns = false;
+            this.filesDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.filesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filesDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CommentsCountColumn,
+            this.fileNameColumn});
+            this.filesDGV.DataSource = this.fileEntryBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.filesDGV.DefaultCellStyle = dataGridViewCellStyle5;
+            this.filesDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filesDGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.filesDGV.Location = new System.Drawing.Point(0, 0);
+            this.filesDGV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.filesDGV.Name = "filesDGV";
+            this.filesDGV.RowHeadersVisible = false;
+            this.filesDGV.RowTemplate.Height = 21;
+            this.filesDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.filesDGV.Size = new System.Drawing.Size(857, 304);
+            this.filesDGV.TabIndex = 0;
+            this.filesDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filesDGV_CellDoubleClick);
+            this.filesDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.filesDGV_CellFormatting);
+            this.filesDGV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.filesDGV_KeyDown);
+            // 
+            // CommentsCountColumn
+            // 
+            this.CommentsCountColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.CommentsCountColumn.DataPropertyName = "CommentsCount";
+            this.CommentsCountColumn.HeaderText = "Comments";
+            this.CommentsCountColumn.Name = "CommentsCountColumn";
+            this.CommentsCountColumn.ReadOnly = true;
+            this.CommentsCountColumn.Width = 97;
+            // 
             // fileNameColumn
             // 
             this.fileNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -409,12 +377,43 @@
             // 
             this.fileEntryBindingSource.DataSource = typeof(Capybara.CommentView.Models.ProjectFileEntry);
             // 
+            // rootTable
+            // 
+            this.rootTable.ColumnCount = 2;
+            this.rootTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.rootTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.rootTable.Controls.Add(this.mainTabControl, 0, 0);
+            this.rootTable.Controls.Add(this.showExportFormButton, 0, 1);
+            this.rootTable.Controls.Add(this.loadingProgressBar, 1, 1);
+            this.rootTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rootTable.Location = new System.Drawing.Point(0, 0);
+            this.rootTable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rootTable.Name = "rootTable";
+            this.rootTable.RowCount = 2;
+            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.rootTable.Size = new System.Drawing.Size(865, 363);
+            this.rootTable.TabIndex = 2;
+            // 
+            // showExportFormButton
+            // 
+            this.showExportFormButton.AutoSize = true;
+            this.showExportFormButton.Location = new System.Drawing.Point(0, 332);
+            this.showExportFormButton.Margin = new System.Windows.Forms.Padding(0);
+            this.showExportFormButton.Name = "showExportFormButton";
+            this.showExportFormButton.Size = new System.Drawing.Size(131, 29);
+            this.showExportFormButton.TabIndex = 2;
+            this.showExportFormButton.Text = "Export Comments...";
+            this.showExportFormButton.UseVisualStyleBackColor = true;
+            this.showExportFormButton.Click += new System.EventHandler(this.showExportFormButton_Click);
+            // 
             // loadingProgressBar
             // 
             this.loadingProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loadingProgressBar.Location = new System.Drawing.Point(140, 329);
+            this.loadingProgressBar.Location = new System.Drawing.Point(131, 332);
+            this.loadingProgressBar.Margin = new System.Windows.Forms.Padding(0);
             this.loadingProgressBar.Name = "loadingProgressBar";
-            this.loadingProgressBar.Size = new System.Drawing.Size(722, 31);
+            this.loadingProgressBar.Size = new System.Drawing.Size(734, 31);
             this.loadingProgressBar.TabIndex = 3;
             // 
             // FilesCommentViewPartControl
@@ -427,6 +426,7 @@
             this.Name = "FilesCommentViewPartControl";
             this.Size = new System.Drawing.Size(865, 363);
             ((System.ComponentModel.ISupportInitialize)(this.commentsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentEntryBindingSource)).EndInit();
             this.mainTabControl.ResumeLayout(false);
             this.commentsTab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -439,10 +439,9 @@
             this.splitContainer2.ResumeLayout(false);
             this.filesTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.filesDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileEntryBindingSource)).EndInit();
             this.rootTable.ResumeLayout(false);
             this.rootTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.commentEntryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileEntryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

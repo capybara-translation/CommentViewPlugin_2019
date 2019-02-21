@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.projectsDGV = new System.Windows.Forms.DataGridView();
-            this.rootTable = new System.Windows.Forms.TableLayoutPanel();
-            this.loadingProgressBar = new System.Windows.Forms.ProgressBar();
             this.projectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetLanguageColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetLanguageCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentsCountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetLanguageBasedProjectEntryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rootTable = new System.Windows.Forms.TableLayoutPanel();
+            this.loadingProgressBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.projectsDGV)).BeginInit();
-            this.rootTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.targetLanguageBasedProjectEntryBindingSource)).BeginInit();
+            this.rootTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // projectsDGV
@@ -62,35 +62,11 @@
             this.projectsDGV.Name = "projectsDGV";
             this.projectsDGV.RowTemplate.Height = 21;
             this.projectsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.projectsDGV.Size = new System.Drawing.Size(911, 285);
+            this.projectsDGV.Size = new System.Drawing.Size(911, 291);
             this.projectsDGV.TabIndex = 0;
             this.projectsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.projectsDGV_CellDoubleClick);
             this.projectsDGV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.projectsDGV_CellFormatting);
             this.projectsDGV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.projectsDGV_KeyDown);
-            // 
-            // rootTable
-            // 
-            this.rootTable.ColumnCount = 1;
-            this.rootTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.rootTable.Controls.Add(this.projectsDGV, 0, 0);
-            this.rootTable.Controls.Add(this.loadingProgressBar, 0, 1);
-            this.rootTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rootTable.Location = new System.Drawing.Point(0, 0);
-            this.rootTable.Name = "rootTable";
-            this.rootTable.RowCount = 2;
-            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.rootTable.Size = new System.Drawing.Size(917, 320);
-            this.rootTable.TabIndex = 1;
-            // 
-            // loadingProgressBar
-            // 
-            this.loadingProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loadingProgressBar.Location = new System.Drawing.Point(3, 294);
-            this.loadingProgressBar.Name = "loadingProgressBar";
-            this.loadingProgressBar.Size = new System.Drawing.Size(911, 23);
-            this.loadingProgressBar.TabIndex = 1;
             // 
             // projectColumn
             // 
@@ -138,6 +114,31 @@
             // 
             this.targetLanguageBasedProjectEntryBindingSource.DataSource = typeof(Capybara.CommentView.Models.TargetLanguageBasedProjectEntry);
             // 
+            // rootTable
+            // 
+            this.rootTable.ColumnCount = 1;
+            this.rootTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.rootTable.Controls.Add(this.projectsDGV, 0, 0);
+            this.rootTable.Controls.Add(this.loadingProgressBar, 0, 1);
+            this.rootTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rootTable.Location = new System.Drawing.Point(0, 0);
+            this.rootTable.Name = "rootTable";
+            this.rootTable.RowCount = 2;
+            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.rootTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.rootTable.Size = new System.Drawing.Size(917, 320);
+            this.rootTable.TabIndex = 1;
+            // 
+            // loadingProgressBar
+            // 
+            this.loadingProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loadingProgressBar.Location = new System.Drawing.Point(0, 297);
+            this.loadingProgressBar.Margin = new System.Windows.Forms.Padding(0);
+            this.loadingProgressBar.Name = "loadingProgressBar";
+            this.loadingProgressBar.Size = new System.Drawing.Size(917, 23);
+            this.loadingProgressBar.TabIndex = 1;
+            // 
             // ProjectsCommentViewPartControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -148,8 +149,8 @@
             this.Name = "ProjectsCommentViewPartControl";
             this.Size = new System.Drawing.Size(917, 320);
             ((System.ComponentModel.ISupportInitialize)(this.projectsDGV)).EndInit();
-            this.rootTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.targetLanguageBasedProjectEntryBindingSource)).EndInit();
+            this.rootTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

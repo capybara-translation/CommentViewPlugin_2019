@@ -117,20 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add_Comment_Action_Description" xml:space="preserve">
-    <value>Add comment on source</value>
-  </data>
-  <data name="Add_Comment_Action_Name" xml:space="preserve">
-    <value>Add comment on source</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CommentViewPlugin_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\comment.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Plugin_Description" xml:space="preserve">
-    <value>Comment View Plugin</value>
-  </data>
-  <data name="Plugin_Name" xml:space="preserve">
-    <value>Comment View Plugin</value>
-  </data>
 </root>

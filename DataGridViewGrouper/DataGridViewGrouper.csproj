@@ -40,7 +40,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Capyabara.CommentViewPlugin.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Capybara.CommentViewPlugin.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -98,6 +98,7 @@
       <DependentUpon>SearchBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Capyabara.CommentViewPlugin.snk" />
+    <None Include="Capybara.CommentViewPlugin.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

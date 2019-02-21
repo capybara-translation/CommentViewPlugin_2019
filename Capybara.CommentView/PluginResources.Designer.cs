@@ -47,7 +47,7 @@ namespace Capybara.CommentView {
         }
         
         /// <summary>
-        ///   厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+        ///   すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
         ///   現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -57,6 +57,24 @@ namespace Capybara.CommentView {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Add comment on source に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Add_Comment_Action_Description {
+            get {
+                return ResourceManager.GetString("Add_Comment_Action_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Add comment on source に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Add_Comment_Action_Name {
+            get {
+                return ResourceManager.GetString("Add_Comment_Action_Name", resourceCulture);
             }
         }
         

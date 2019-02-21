@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.targetCheckBox = new System.Windows.Forms.CheckBox();
-            this.exportOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sourceCheckBox = new System.Windows.Forms.CheckBox();
             this.versionCheckBox = new System.Windows.Forms.CheckBox();
             this.severityCheckBox = new System.Windows.Forms.CheckBox();
@@ -45,9 +44,10 @@
             this.commentsCheckBox = new System.Windows.Forms.CheckBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.exportButton = new System.Windows.Forms.Button();
+            this.exportOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,10 +80,6 @@
             this.targetCheckBox.TabIndex = 0;
             this.targetCheckBox.Text = "Target";
             this.targetCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // exportOptionsBindingSource
-            // 
-            this.exportOptionsBindingSource.DataSource = typeof(Capybara.CommentView.Models.ExportOptions);
             // 
             // sourceCheckBox
             // 
@@ -228,10 +224,16 @@
             this.exportButton.Text = "Export";
             this.exportButton.UseVisualStyleBackColor = true;
             // 
+            // exportOptionsBindingSource
+            // 
+            this.exportOptionsBindingSource.DataSource = typeof(Capybara.CommentView.Models.ExportOptions);
+            // 
             // ExportForm
             // 
+            this.AcceptButton = this.exportButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(664, 272);
             this.Controls.Add(this.exportButton);
             this.Controls.Add(this.cancelButton);
@@ -243,9 +245,9 @@
             this.Text = "ExportForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exportOptionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

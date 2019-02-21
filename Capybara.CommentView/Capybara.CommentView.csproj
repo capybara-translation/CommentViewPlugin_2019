@@ -120,6 +120,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCommentAction.cs" />
+    <Compile Include="AddCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCommentForm.Designer.cs">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\CommentExtractor.cs" />
     <Compile Include="Models\CommentService.cs" />
     <Compile Include="Models\TargetLanguageBasedProjectEntry.cs" />
@@ -170,6 +177,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\Comment-icon.png" />
+    <None Include="Capybara.CommentViewPlugin.snk" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.ExportOptions.datasource" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.TargetLanguageBasedProjectEntry.datasource" />
@@ -181,6 +189,9 @@
     <None Include="Properties\DataSources\Capybara.CommentView.Models.FileEntry.datasource" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCommentForm.resx">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProjectsCommentViewPartControl.resx">
       <DependentUpon>ProjectsCommentViewPartControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,7 +215,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Capyabara.CommentViewPlugin.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Capybara.CommentViewPlugin.snk</AssemblyOriginatorKeyFile>
     <PluginDeploymentPath>$(AppData)\Sdl\Sdl Trados Studio\15\Plugins</PluginDeploymentPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
