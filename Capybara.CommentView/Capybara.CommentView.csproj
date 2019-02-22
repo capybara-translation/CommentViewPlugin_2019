@@ -128,7 +128,9 @@
       <DependentUpon>AddCommentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CommentExtractor.cs" />
+    <Compile Include="Models\CommentInfo.cs" />
     <Compile Include="Models\CommentService.cs" />
+    <Compile Include="Models\SourceCommentVisitor.cs" />
     <Compile Include="Models\TargetLanguageBasedProjectEntry.cs" />
     <Compile Include="ProjectsCommentViewPartControl.cs">
       <SubType>UserControl</SubType>

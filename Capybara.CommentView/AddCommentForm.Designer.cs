@@ -43,6 +43,7 @@
             this.commentTextBox.Name = "commentTextBox";
             this.commentTextBox.Size = new System.Drawing.Size(414, 125);
             this.commentTextBox.TabIndex = 0;
+            this.commentTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.commentTextBox_KeyPress);
             // 
             // okButton
             // 
@@ -68,7 +69,6 @@
             // 
             // AddCommentForm
             // 
-            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;

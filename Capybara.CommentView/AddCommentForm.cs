@@ -26,5 +26,13 @@ namespace Capybara.CommentView
                 CommentText = commentTextBox.Text;
             }
         }
+
+        private void commentTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == (char)Keys.Return) && (Control.ModifierKeys == Keys.Shift))
+            {
+                e.KeyChar = '\n';
+            }
+        }
     }
 }
