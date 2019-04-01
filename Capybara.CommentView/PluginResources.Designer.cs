@@ -61,24 +61,6 @@ namespace Capybara.CommentView {
         }
         
         /// <summary>
-        ///   Add comment on source に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string Add_Comment_Action_Description {
-            get {
-                return ResourceManager.GetString("Add_Comment_Action_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Add comment on source に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string Add_Comment_Action_Name {
-            get {
-                return ResourceManager.GetString("Add_Comment_Action_Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
         internal static System.Drawing.Icon CommentViewPlugin_Icon {
