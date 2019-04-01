@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capybara.CommentView.Ext;
 using Capybara.CommentView.Models;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
-using Sdl.ProjectAutomation.Core;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
-using Task = System.Threading.Tasks.Task;
 
 namespace Capybara.CommentView
 {
@@ -145,6 +142,7 @@ namespace Capybara.CommentView
                 {
                     if (commentsDGV.Rows.Count > index)
                     {
+                        commentsDGV.CurrentCell = commentsDGV.Rows[index].Cells[0];
                         commentsDGV.Rows[index].Selected = true;
                     }
                 }
@@ -159,79 +157,12 @@ namespace Capybara.CommentView
             {
                 if (filesDGV.Rows.Count > index)
                 {
+                    filesDGV.CurrentCell = filesDGV.Rows[index].Cells[0];
                     filesDGV.Rows[index].Selected = true;
                 }
             }
 
         }
-
-        private void CommentViewPartControl_SelectedFilesChanged(object sender, EventArgs e)
-        {
-            Task.Factory.StartNew(() =>
-            {
-                var selectedFiles =
-                    GetFilesController()
-                        .SelectedFiles.Where(
-                            f =>
-                                File.Exists(f.LocalFilePath) &&
-                                !f.IsSource &&
-                                f.Role == FileRole.Translatable &&
-                                f.LocalFilePath.EndsWith(".sdlxliff", StringComparison.OrdinalIgnoreCase));
-                var commentEntries = new List<CommentEntry>();
-                var fileEntries = new List<ProjectFileEntry>();
-                foreach (var file in selectedFiles)
-                {
-                    var comments = CommentExtractor.Extract(file);
-                    commentEntries.AddRange(comments);
-                    fileEntries.Add(new ProjectFileEntry(file, comments));
-                }
-
-                return new {comments = commentEntries, files = fileEntries};
-            }).ContinueWith(x =>
-            {
-                var commentIndices =
-                    commentsDGV.SelectedRows.OfType<DataGridViewRow>()
-                        .Select(row => row.Index)
-                        .Where(i => i >= 0)
-                        .ToList();
-                var fileIndices =
-                    filesDGV.SelectedRows.OfType<DataGridViewRow>().Select(row => row.Index).Where(i => i >= 0)
-                        .ToList();
-
-                sourceRTB.Clear();
-                targetRTB.Clear();
-                _commentEntries.Clear();
-                _fileEntries.Clear();
-                _commentEntries.AddRange(x.Result.comments);
-                _fileEntries.AddRange((x.Result.files));
-
-                if (commentIndices.Count > 0)
-                {
-                    commentsDGV.ClearSelection();
-                    foreach (var index in commentIndices)
-                    {
-                        if (commentsDGV.Rows.Count > index)
-                        {
-                            commentsDGV.Rows[index].Selected = true;
-                        }
-                    }
-                }
-
-                if (fileIndices.Count > 0)
-                {
-                    filesDGV.ClearSelection();
-                }
-
-                foreach (var index in fileIndices)
-                {
-                    if (filesDGV.Rows.Count > index)
-                    {
-                        filesDGV.Rows[index].Selected = true;
-                    }
-                }
-            }, TaskScheduler.FromCurrentSynchronizationContext());
-        }
-
 
         private FilesController GetFilesController()
         {
