@@ -259,7 +259,7 @@ namespace Capybara.CommentView_2017
                 var document = GetEditorController().Open(row.ProjectFile, EditingMode.Translation);
                 if (row.ParagraphId != null && row.SegmentId != null)
                 {
-                    document.SetActiveSegmentPair(row.ParagraphId, row.SegmentId);
+                    document.SetActiveSegmentPair(row.ParagraphId, row.SegmentId, true);
                 }
             }
             catch (Exception ex)
@@ -357,7 +357,7 @@ namespace Capybara.CommentView_2017
                 var document = GetEditorController().Open(row.ProjectFile, EditingMode.Translation);
                 if (row.ParagraphId != null && row.SegmentId != null)
                 {
-                    document.SetActiveSegmentPair(row.ParagraphId, row.SegmentId);
+                    document.SetActiveSegmentPair(row.ParagraphId, row.SegmentId, true);
                 }
             }
             catch (Exception ex)
