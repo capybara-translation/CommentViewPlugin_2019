@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridViewGrouper", "Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capybara.CommentView_2017", "Capybara.CommentView_2017\Capybara.CommentView_2017.csproj", "{B8B8380E-E814-4435-8885-44F063E02D39}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BEED1F76-F1EE-4E6C-A079-E95AB91B5988}"
+	ProjectSection(SolutionItems) = preProject
+		Capybara.CommentView.snk = Capybara.CommentView.snk
+		readme.md = readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

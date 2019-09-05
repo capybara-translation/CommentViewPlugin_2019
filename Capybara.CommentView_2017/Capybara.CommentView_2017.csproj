@@ -144,6 +144,7 @@
     <EmbeddedResource Include="ProjectsCommentViewPartControl.resx">
       <DependentUpon>ProjectsCommentViewPartControl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Capybara.CommentView.snk" />
     <None Include="Resources\comment.ico" />
     <EmbeddedResource Include="ExportForm.resx">
       <DependentUpon>ExportForm.cs</DependentUpon>
@@ -155,7 +156,6 @@
     <Content Include="pluginpackage.manifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Capybara.CommentViewPlugin.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +171,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Capybara.CommentViewPlugin.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Capybara.CommentView.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Sdl.Core.PluginFramework.Build.14.0.0\Build\net45\Sdl.Core.PluginFramework.Build.targets" Condition="Exists('..\packages\Sdl.Core.PluginFramework.Build.14.0.0\Build\net45\Sdl.Core.PluginFramework.Build.targets')" />

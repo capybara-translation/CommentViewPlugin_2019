@@ -171,14 +171,13 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\Comment-icon.png" />
-    <None Include="Capybara.CommentViewPlugin.snk" />
+    <None Include="Capybara.CommentView.snk" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.ExportOptions.datasource" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.TargetLanguageBasedProjectEntry.datasource" />
     <None Include="Resources\comment.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Capyabara.CommentViewPlugin.snk" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.CommentEntry.datasource" />
     <None Include="Properties\DataSources\Capybara.CommentView.Models.FileEntry.datasource" />
   </ItemGroup>
@@ -206,7 +205,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Capybara.CommentViewPlugin.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Capybara.CommentView.snk</AssemblyOriginatorKeyFile>
     <PluginDeploymentPath>$(AppData)\Sdl\Sdl Trados Studio\15\Plugins</PluginDeploymentPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
