@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Capybara.CommentView.Models;
 using Sdl.Desktop.IntegrationApi;
 using Sdl.Desktop.IntegrationApi.Extensions;
+using Sdl.Desktop.IntegrationApi.Interfaces;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Task = System.Threading.Tasks.Task;
 
@@ -35,7 +36,7 @@ namespace Capybara.CommentView
             };
         }
 
-        protected override Control GetContentControl()
+        protected override IUIControl GetContentControl()
         {
             return Control.Value;
         }

@@ -5,12 +5,13 @@ using System.Linq;
 using System.Windows.Forms;
 using Capybara.CommentView.Ext;
 using Capybara.CommentView.Models;
+using Sdl.Desktop.IntegrationApi.Interfaces;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 using Subro.Controls;
 
 namespace Capybara.CommentView
 {
-    public partial class ProjectsCommentViewPartControl : UserControl
+    public partial class ProjectsCommentViewPartControl : UserControl, IUIControl
     {
         private SortableBindingList<TargetLanguageBasedProjectEntry> _projectEntries = new SortableBindingList<TargetLanguageBasedProjectEntry>();
 

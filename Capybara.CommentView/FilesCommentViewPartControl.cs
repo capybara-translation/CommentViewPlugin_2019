@@ -8,11 +8,12 @@ using Capybara.CommentView.Ext;
 using Capybara.CommentView.Models;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using Sdl.Desktop.IntegrationApi.Interfaces;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
 
 namespace Capybara.CommentView
 {
-    public partial class FilesCommentViewPartControl : UserControl
+    public partial class FilesCommentViewPartControl : UserControl, IUIControl
     {
         private string _initialDirectory;
 
