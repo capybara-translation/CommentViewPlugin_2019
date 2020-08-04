@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BEED1F76-F1EE-4E6C-A079-E95AB91B5988}"
 	ProjectSection(SolutionItems) = preProject
 		Capybara.CommentView.snk = Capybara.CommentView.snk
+		LICENSE.md = LICENSE.md
 		readme.md = readme.md
 	EndProjectSection
 EndProject
