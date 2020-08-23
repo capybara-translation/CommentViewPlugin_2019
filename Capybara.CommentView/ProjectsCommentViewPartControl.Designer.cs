@@ -61,7 +61,7 @@
             this.projectsDGV.Location = new System.Drawing.Point(3, 3);
             this.projectsDGV.Name = "projectsDGV";
             this.projectsDGV.RowTemplate.Height = 21;
-            this.projectsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.projectsDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.projectsDGV.Size = new System.Drawing.Size(911, 291);
             this.projectsDGV.TabIndex = 0;
             this.projectsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.projectsDGV_CellDoubleClick);
@@ -99,7 +99,7 @@
             this.targetLanguageCodeColumn.HeaderText = "Target Language";
             this.targetLanguageCodeColumn.Name = "targetLanguageCodeColumn";
             this.targetLanguageCodeColumn.ReadOnly = true;
-            this.targetLanguageCodeColumn.Width = 110;
+            this.targetLanguageCodeColumn.Width = 109;
             // 
             // commentsCountColumn
             // 

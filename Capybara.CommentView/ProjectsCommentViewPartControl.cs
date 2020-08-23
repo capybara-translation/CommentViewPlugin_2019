@@ -7,6 +7,7 @@ using Capybara.CommentView.Ext;
 using Capybara.CommentView.Models;
 using Sdl.Desktop.IntegrationApi.Interfaces;
 using Sdl.TranslationStudioAutomation.IntegrationApi;
+using Sdl.TranslationStudioAutomation.IntegrationApi.Events;
 using Subro.Controls;
 
 namespace Capybara.CommentView
@@ -69,6 +70,11 @@ namespace Capybara.CommentView
             return SdlTradosStudio.Application.GetController<ProjectsController>();
         }
 
+        private IStudioEventAggregator GetEventAggregator()
+        {
+            return SdlTradosStudio.Application.GetService<IStudioEventAggregator>();
+        }
+
         private void OpenProject(TargetLanguageBasedProjectEntry entry)
         {
             if (entry == null)
@@ -77,7 +83,7 @@ namespace Capybara.CommentView
             }
             try
             {
-                GetProjectsController().Open(entry.Project);
+                GetEventAggregator().Publish(new OpenProjectForSelectedLanguageEvent(entry.Project, entry.TargetLanguage));
             }
             catch (Exception ex)
             {
